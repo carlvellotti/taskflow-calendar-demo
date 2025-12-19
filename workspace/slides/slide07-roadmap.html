@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 25pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 28pt; margin: 0; }
+.content {
+  display: flex; flex: 1; padding: 25pt 40pt; gap: 25pt;
+}
+.phase-card {
+  flex: 1; background: #FFFFFF; border-radius: 8pt;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1); overflow: hidden;
+}
+.phase-header {
+  padding: 15pt 20pt;
+}
+.phase-card:nth-child(1) .phase-header { background: #277884; }
+.phase-card:nth-child(2) .phase-header { background: #5EA8A7; }
+.phase-card:nth-child(3) .phase-header { background: #FE4447; }
+.phase-label { color: #FFFFFF; font-size: 11pt; margin: 0; opacity: 0.8; }
+.phase-title { color: #FFFFFF; font-size: 18pt; font-weight: bold; margin: 5pt 0 0 0; }
+.phase-body { padding: 20pt; }
+ul { margin: 0; padding-left: 16pt; }
+li { color: #1C2833; font-size: 12pt; margin-bottom: 10pt; line-height: 1.4; }
+.feature-tag {
+  display: inline; background: #F4F6F6; color: #666666;
+  font-size: 9pt; padding: 2pt 6pt; border-radius: 3pt;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Phase 2 & 3 Roadmap</h1>
+</div>
+<div class="content">
+  <div class="phase-card">
+    <div class="phase-header">
+      <p class="phase-label">CURRENT</p>
+      <p class="phase-title">Phase 1: MVP</p>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li>Google Calendar OAuth</li>
+        <li>One-way sync (TaskFlow to Calendar)</li>
+        <li>Sync configuration filters</li>
+        <li>Calendar selection</li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase-card">
+    <div class="phase-header">
+      <p class="phase-label">FAST FOLLOW</p>
+      <p class="phase-title">Phase 2</p>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li>Two-way sync <span class="feature-tag">High demand</span></li>
+        <li>Outlook integration</li>
+        <li>Team calendar view</li>
+        <li>Conflict resolution</li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase-card">
+    <div class="phase-header">
+      <p class="phase-label">FUTURE</p>
+      <p class="phase-title">Phase 3</p>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li>Auto-block focus time <span class="feature-tag">Differentiator</span></li>
+        <li>Suggested time slots</li>
+        <li>Apple Calendar integration</li>
+        <li>Workload balancing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

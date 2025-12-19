@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 18pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 24pt; margin: 0; }
+.content {
+  display: flex; padding: 15pt 40pt 36pt 40pt; gap: 25pt;
+}
+.diagram { flex: 1.2; display: flex; flex-direction: column; align-items: center; gap: 10pt; }
+.details { flex: 1; display: flex; flex-direction: column; gap: 10pt; }
+.component-row {
+  display: flex; gap: 8pt; align-items: center; justify-content: center;
+}
+.component {
+  background: #FFFFFF; border: 2pt solid #277884; border-radius: 6pt;
+  padding: 8pt 12pt; text-align: center;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.component p { color: #277884; font-size: 8pt; font-weight: bold; margin: 0; }
+.component-external {
+  background: #5EA8A7; border: 2pt solid #277884;
+}
+.component-external p { color: #FFFFFF; }
+.arrow { color: #277884; font-size: 14pt; margin: 0; }
+.storage-row {
+  display: flex; gap: 15pt; justify-content: center; margin-top: 8pt;
+}
+.storage {
+  background: #F4F6F6; border: 2pt dashed #999999; border-radius: 6pt;
+  padding: 8pt 12pt; text-align: center;
+}
+.storage p { color: #666666; font-size: 8pt; margin: 0; }
+.card {
+  background: #FFFFFF; border-radius: 6pt; padding: 12pt;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+h3 { color: #277884; font-size: 10pt; margin: 0 0 8pt 0; }
+ul { margin: 0; padding-left: 12pt; }
+li { color: #1C2833; font-size: 8pt; margin-bottom: 3pt; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Technical Architecture</h1>
+</div>
+<div class="content">
+  <div class="diagram">
+    <div class="component-row">
+      <div class="component">
+        <p>TaskFlow Backend</p>
+      </div>
+      <p class="arrow">&rarr;</p>
+      <div class="component">
+        <p>Sync Service</p>
+      </div>
+      <p class="arrow">&rarr;</p>
+      <div class="component component-external">
+        <p>Google Calendar API</p>
+      </div>
+    </div>
+    <div class="storage-row">
+      <div class="storage">
+        <p>PostgreSQL</p>
+        <p>(sync config)</p>
+      </div>
+      <div class="storage">
+        <p>Redis</p>
+        <p>(job queue)</p>
+      </div>
+    </div>
+  </div>
+  <div class="details">
+    <div class="card">
+      <h3>Data Models</h3>
+      <ul>
+        <li><b>calendar_connections</b> - OAuth tokens, calendar IDs</li>
+        <li><b>sync_settings</b> - Filters, preferences</li>
+        <li><b>sync_events</b> - Task to event mapping</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Non-Functional Requirements</h3>
+      <ul>
+        <li>Sync latency under 5 minutes</li>
+        <li>99.9% sync success rate</li>
+        <li>OAuth 2.0 with minimal scopes</li>
+        <li>SOC 2 compliant data handling</li>
+        <li>GDPR-compliant consent flow</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

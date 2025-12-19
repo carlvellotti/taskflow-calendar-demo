@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 18pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 24pt; margin: 0; }
+.header p { color: #5EA8A7; font-size: 12pt; margin: 4pt 0 0 0; }
+.content {
+  display: flex; padding: 18pt 40pt 36pt 40pt; gap: 15pt;
+}
+.column { flex: 1; display: flex; flex-direction: column; gap: 12pt; }
+.req-card {
+  background: #FFFFFF; border-radius: 6pt; padding: 12pt;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+.req-badge {
+  display: inline-block; background: #277884; border-radius: 3pt;
+  padding: 2pt 6pt; margin-bottom: 6pt;
+}
+.req-badge p { color: #FFFFFF; font-size: 8pt; font-weight: bold; margin: 0; }
+h3 { color: #1C2833; font-size: 11pt; margin: 0 0 6pt 0; }
+ul { margin: 0; padding-left: 12pt; }
+li { color: #666666; font-size: 8pt; margin-bottom: 3pt; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>MVP Scope (Phase 1)</h1>
+  <p>Core functionality for initial release</p>
+</div>
+<div class="content">
+  <div class="column">
+    <div class="req-card">
+      <div class="req-badge"><p>FR-1</p></div>
+      <h3>Google Calendar Connection</h3>
+      <ul>
+        <li>OAuth 2.0 authentication flow</li>
+        <li>Support for Workspace and Gmail</li>
+        <li>Clear permission scopes</li>
+        <li>Easy disconnect option</li>
+      </ul>
+    </div>
+    <div class="req-card">
+      <div class="req-badge"><p>FR-2</p></div>
+      <h3>One-Way Sync</h3>
+      <ul>
+        <li>Deadlines create calendar events</li>
+        <li>Events include title, project, link</li>
+        <li>Auto-update on deadline change</li>
+        <li>Auto-delete on completion</li>
+      </ul>
+    </div>
+  </div>
+  <div class="column">
+    <div class="req-card">
+      <div class="req-badge"><p>FR-3</p></div>
+      <h3>Sync Configuration</h3>
+      <ul>
+        <li>Global sync on/off toggle</li>
+        <li>Filter by project</li>
+        <li>Filter by priority level</li>
+        <li>Filter by task assignment</li>
+      </ul>
+    </div>
+    <div class="req-card">
+      <div class="req-badge"><p>FR-4</p></div>
+      <h3>Calendar Selection</h3>
+      <ul>
+        <li>Choose target calendar</li>
+        <li>Create dedicated TaskFlow calendar</li>
+        <li>Support multiple calendars</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

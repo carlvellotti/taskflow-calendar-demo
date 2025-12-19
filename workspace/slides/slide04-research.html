@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 18pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 24pt; margin: 0; }
+.content {
+  display: flex; flex: 1; padding: 18pt 40pt 36pt 40pt; gap: 20pt;
+}
+.left-column { flex: 1; display: flex; flex-direction: column; gap: 10pt; }
+.right-column { flex: 1; display: flex; flex-direction: column; gap: 10pt; }
+.stat-row {
+  background: #FFFFFF; border-radius: 6pt; padding: 10pt 15pt;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  display: flex; align-items: center; gap: 12pt;
+}
+.stat-big { color: #277884; font-size: 22pt; font-weight: bold; margin: 0; min-width: 50pt; }
+.stat-desc { color: #1C2833; font-size: 10pt; margin: 0; }
+.card {
+  background: #FFFFFF; border-radius: 6pt; padding: 12pt;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1); flex: 1;
+}
+h3 { color: #277884; font-size: 12pt; margin: 0 0 8pt 0; }
+ul { margin: 0; padding-left: 14pt; }
+li { color: #1C2833; font-size: 9pt; margin-bottom: 4pt; }
+.concern-box {
+  background: #FE4447; border-radius: 6pt; padding: 10pt 15pt;
+  display: flex; align-items: center; gap: 12pt;
+}
+.concern-pct { color: #FFFFFF; font-size: 20pt; font-weight: bold; margin: 0; }
+.concern-text { color: #FFFFFF; font-size: 10pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>User Research Highlights</h1>
+</div>
+<div class="content">
+  <div class="left-column">
+    <div class="stat-row">
+      <p class="stat-big">85%</p>
+      <p class="stat-desc">rated interest at 4-5 out of 5 (average: 4.1)</p>
+    </div>
+    <div class="stat-row">
+      <p class="stat-big">75%</p>
+      <p class="stat-desc">use Google Calendar as primary calendar</p>
+    </div>
+    <div class="concern-box">
+      <p class="concern-pct">30%</p>
+      <p class="concern-text">Top concern: Calendar clutter</p>
+    </div>
+  </div>
+  <div class="right-column">
+    <div class="card">
+      <h3>Top Pain Points</h3>
+      <ul>
+        <li>Manual effort keeping systems in sync (7 mentions)</li>
+        <li>Missed deadlines from lack of visibility (5 mentions)</li>
+        <li>Constant context switching between apps (4 mentions)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Top Feature Requests</h3>
+      <ul>
+        <li>Two-way sync between TaskFlow and calendar</li>
+        <li>Automatic deadline event creation</li>
+        <li>Team visibility into shared deadlines</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

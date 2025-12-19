@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 18pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 24pt; margin: 0; }
+.content {
+  display: flex; flex-direction: column; padding: 15pt 40pt 36pt 40pt; gap: 8pt;
+}
+.risk-row {
+  background: #FFFFFF; border-radius: 6pt; padding: 10pt 15pt;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  display: flex; align-items: center; gap: 15pt;
+}
+.risk-indicator {
+  width: 6pt; height: 40pt; border-radius: 3pt;
+}
+.high { background: #FE4447; }
+.medium { background: #F39C12; }
+.risk-content { flex: 1; }
+.risk-title { color: #1C2833; font-size: 11pt; font-weight: bold; margin: 0 0 3pt 0; }
+.risk-detail { color: #666666; font-size: 9pt; margin: 0; }
+.mitigation {
+  background: #F4F6F6; border-radius: 4pt; padding: 8pt 12pt;
+  max-width: 180pt;
+}
+.mitigation p { color: #277884; font-size: 8pt; margin: 0; }
+.mitigation-label { font-weight: bold; margin-bottom: 2pt; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Risks & Mitigations</h1>
+</div>
+<div class="content">
+  <div class="risk-row">
+    <div class="risk-indicator high"></div>
+    <div class="risk-content">
+      <p class="risk-title">Calendar Clutter</p>
+      <p class="risk-detail">Users overwhelmed by too many events</p>
+    </div>
+    <div class="mitigation">
+      <p class="mitigation-label">Mitigation</p>
+      <p>Smart defaults: my tasks, high priority</p>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-indicator medium"></div>
+    <div class="risk-content">
+      <p class="risk-title">Sync Conflicts</p>
+      <p class="risk-detail">Two-way sync may cause data conflicts</p>
+    </div>
+    <div class="mitigation">
+      <p class="mitigation-label">Mitigation</p>
+      <p>Phase 2 with careful conflict resolution</p>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-indicator medium"></div>
+    <div class="risk-content">
+      <p class="risk-title">API Rate Limits</p>
+      <p class="risk-detail">Google API quotas may limit sync</p>
+    </div>
+    <div class="mitigation">
+      <p class="mitigation-label">Mitigation</p>
+      <p>Batching, queue management</p>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-indicator medium"></div>
+    <div class="risk-content">
+      <p class="risk-title">Enterprise Security</p>
+      <p class="risk-detail">OAuth permission hesitation</p>
+    </div>
+    <div class="mitigation">
+      <p class="mitigation-label">Mitigation</p>
+      <p>SOC 2 compliance, documentation</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

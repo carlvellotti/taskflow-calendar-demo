@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 20pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 26pt; margin: 0; }
+.content {
+  display: flex; padding: 20pt 40pt 40pt 40pt; gap: 15pt;
+  justify-content: center; align-items: flex-start;
+}
+.metric-card {
+  background: #FFFFFF; border-radius: 8pt; padding: 15pt;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  width: 115pt; text-align: center;
+}
+.metric-value { color: #277884; font-size: 28pt; font-weight: bold; margin: 0; }
+.metric-label { color: #1C2833; font-size: 9pt; margin: 6pt 0 0 0; }
+.metric-card:nth-child(1) .metric-value { color: #FE4447; }
+.metric-card:nth-child(2) .metric-value { color: #5EA8A7; }
+.metric-card:nth-child(3) .metric-value { color: #277884; }
+.metric-card:nth-child(4) .metric-value { color: #FE4447; }
+.metric-card:nth-child(5) .metric-value { color: #5EA8A7; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Success Metrics</h1>
+</div>
+<div class="content">
+  <div class="metric-card">
+    <p class="metric-value">60%</p>
+    <p class="metric-label">Feature adoption within 90 days</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">30%</p>
+    <p class="metric-label">Reduction in missed deadlines</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">15%</p>
+    <p class="metric-label">Increase in daily active usage</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">+5</p>
+    <p class="metric-label">NPS improvement points</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">3+</p>
+    <p class="metric-label">Enterprise deals influenced</p>
+  </div>
+</div>
+</body>
+</html>

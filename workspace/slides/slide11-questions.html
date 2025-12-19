@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 18pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 24pt; margin: 0; }
+.content {
+  display: flex; padding: 18pt 40pt 36pt 40pt; gap: 15pt;
+}
+.column { flex: 1; display: flex; flex-direction: column; gap: 10pt; }
+.question-card {
+  background: #FFFFFF; border-radius: 6pt; padding: 12pt 15pt;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  display: flex; align-items: flex-start; gap: 10pt;
+}
+.q-number {
+  background: #277884; width: 20pt; height: 20pt;
+  border-radius: 50%; display: flex; justify-content: center; align-items: center;
+  flex-shrink: 0;
+}
+.q-number p { color: #FFFFFF; font-size: 10pt; font-weight: bold; margin: 0; }
+.q-text { color: #1C2833; font-size: 10pt; margin: 0; line-height: 1.3; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Open Questions</h1>
+</div>
+<div class="content">
+  <div class="column">
+    <div class="question-card">
+      <div class="q-number"><p>1</p></div>
+      <p class="q-text">Should we support multiple calendar connections per user?</p>
+    </div>
+    <div class="question-card">
+      <div class="q-number"><p>2</p></div>
+      <p class="q-text">What's the right default reminder time for deadline events?</p>
+    </div>
+    <div class="question-card">
+      <div class="q-number"><p>3</p></div>
+      <p class="q-text">How do we handle tasks with no deadline date?</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="question-card">
+      <div class="q-number"><p>4</p></div>
+      <p class="q-text">Should completed tasks remain on calendar or auto-delete?</p>
+    </div>
+    <div class="question-card">
+      <div class="q-number"><p>5</p></div>
+      <p class="q-text">Do we need admin controls to disable calendar sync for enterprise?</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

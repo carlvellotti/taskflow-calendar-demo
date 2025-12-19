@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F4F6F6; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #277884; padding: 25pt 40pt; margin: 0;
+}
+.header h1 { color: #FFFFFF; font-size: 28pt; margin: 0; }
+.content {
+  display: flex; flex: 1; padding: 25pt 40pt; gap: 25pt;
+}
+.timeline { flex: 1.5; }
+.criteria { flex: 1; display: flex; flex-direction: column; gap: 15pt; }
+.phase-row {
+  display: flex; align-items: center; margin-bottom: 15pt;
+}
+.phase-marker {
+  width: 40pt; height: 40pt; border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+  margin-right: 15pt;
+}
+.phase-marker p { color: #FFFFFF; font-size: 12pt; font-weight: bold; margin: 0; }
+.phase-marker.week7 { background: #5EA8A7; }
+.phase-marker.week8 { background: #277884; }
+.phase-marker.week9 { background: #277884; }
+.phase-marker.week10 { background: #FE4447; }
+.phase-info { flex: 1; }
+.phase-title { color: #1C2833; font-size: 14pt; font-weight: bold; margin: 0; }
+.phase-desc { color: #666666; font-size: 11pt; margin: 3pt 0 0 0; }
+.connector {
+  width: 2pt; height: 15pt; background: #CCCCCC; margin-left: 19pt;
+}
+.card {
+  background: #FFFFFF; border-radius: 8pt; padding: 15pt;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+h3 { color: #277884; font-size: 12pt; margin: 0 0 10pt 0; }
+ul { margin: 0; padding-left: 14pt; }
+li { color: #1C2833; font-size: 10pt; margin-bottom: 5pt; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Launch Plan</h1>
+</div>
+<div class="content">
+  <div class="timeline">
+    <div class="phase-row">
+      <div class="phase-marker week7"><p>W7</p></div>
+      <div class="phase-info">
+        <p class="phase-title">Beta Release</p>
+        <p class="phase-desc">Invite-only, 10 internal/friendly users</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="phase-row">
+      <div class="phase-marker week8"><p>W8</p></div>
+      <div class="phase-info">
+        <p class="phase-title">Limited GA</p>
+        <p class="phase-desc">10% of users via feature flag</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="phase-row">
+      <div class="phase-marker week9"><p>W9</p></div>
+      <div class="phase-info">
+        <p class="phase-title">Full GA</p>
+        <p class="phase-desc">100% rollout to all users</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="phase-row">
+      <div class="phase-marker week10"><p>W10</p></div>
+      <div class="phase-info">
+        <p class="phase-title">Marketing Push</p>
+        <p class="phase-desc">Blog post, email announcement</p>
+      </div>
+    </div>
+  </div>
+  <div class="criteria">
+    <div class="card">
+      <h3>Beta Criteria</h3>
+      <ul>
+        <li>10 internal/friendly users</li>
+        <li>1 week usage period</li>
+        <li>Less than 5 P1 bugs</li>
+        <li>Greater than 80% sync success</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>GA Criteria</h3>
+      <ul>
+        <li>All P1/P2 bugs resolved</li>
+        <li>99.9% sync success rate</li>
+        <li>Documentation complete</li>
+        <li>Support team trained</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
