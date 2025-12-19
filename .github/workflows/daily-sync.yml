@@ -15,3 +15,5 @@ jobs:
           prompt: |
             Run the linear-status-sync.py script to fetch ticket statuses
             from Linear and update docs/prd.md with the current status table.
+        env:
+          LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
