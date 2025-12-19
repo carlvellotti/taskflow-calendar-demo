@@ -1,0 +1,17 @@
+name: Daily Status Sync
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 8am UTC daily
+  workflow_dispatch:  # Manual trigger for demo
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Run the linear-status-sync.py script to fetch ticket statuses
+            from Linear and update docs/prd.md with the current status table.

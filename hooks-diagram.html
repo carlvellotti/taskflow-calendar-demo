@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Hooks Reference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .hooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .hook-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hook-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .hook-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .hook-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .hook-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .hook-timing {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        .hook-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .hook-example {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+        .hook-example-label {
+            color: #7c3aed;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .hook-example-text {
+            color: #94a3b8;
+        }
+
+        /* Color coding by category */
+        .hook-card.lifecycle .hook-icon { background: linear-gradient(135deg, #10b981, #059669); }
+        .hook-card.tool .hook-icon { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .hook-card.response .hook-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .hook-card.context .hook-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .hook-card.input .hook-icon { background: linear-gradient(135deg, #ec4899, #db2777); }
+
+        .category-legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .legend-dot.lifecycle { background: #10b981; }
+        .legend-dot.tool { background: #3b82f6; }
+        .legend-dot.response { background: #f59e0b; }
+        .legend-dot.context { background: #8b5cf6; }
+        .legend-dot.input { background: #ec4899; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude Code Hooks</h1>
+        <p class="subtitle">Automated triggers that run shell commands at key moments in Claude's workflow</p>
+
+        <div class="category-legend">
+            <div class="legend-item"><div class="legend-dot lifecycle"></div> Session Lifecycle</div>
+            <div class="legend-item"><div class="legend-dot tool"></div> Tool Events</div>
+            <div class="legend-item"><div class="legend-dot response"></div> Response Events</div>
+            <div class="legend-item"><div class="legend-dot context"></div> Context Management</div>
+            <div class="legend-item"><div class="legend-dot input"></div> User Input</div>
+        </div>
+
+        <div class="hooks-grid">
+            <!-- Session Lifecycle -->
+            <div class="hook-card lifecycle">
+                <div class="hook-header">
+                    <div class="hook-icon">🚀</div>
+                    <div>
+                        <div class="hook-name">SessionStart</div>
+                        <div class="hook-timing">Fires when session begins</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs when Claude Code starts a new session or resumes an existing one. Output is added to conversation context, so Claude starts with that information loaded.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Load git status, recent Linear tickets, or project context automatically</div>
+                </div>
+            </div>
+
+            <div class="hook-card lifecycle">
+                <div class="hook-header">
+                    <div class="hook-icon">👋</div>
+                    <div>
+                        <div class="hook-name">SessionEnd</div>
+                        <div class="hook-timing">Fires when session closes</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs when the Claude Code session ends. Use for cleanup, logging, or saving session summaries.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Auto-save conversation summary to a daily log file</div>
+                </div>
+            </div>
+
+            <!-- Tool Events -->
+            <div class="hook-card tool">
+                <div class="hook-header">
+                    <div class="hook-icon">⚡</div>
+                    <div>
+                        <div class="hook-name">PreToolUse</div>
+                        <div class="hook-timing">Fires before tool executes</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs before a tool call proceeds. Can return "allow" to bypass permissions, or "deny" to block execution. Best for gating expensive or sensitive operations.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Block file writes to production config directories</div>
+                </div>
+            </div>
+
+            <div class="hook-card tool">
+                <div class="hook-header">
+                    <div class="hook-icon">✅</div>
+                    <div>
+                        <div class="hook-name">PostToolUse</div>
+                        <div class="hook-timing">Fires after tool completes</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs immediately after a tool completes successfully. Great for formatters, validators, or triggering follow-up actions.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Auto-format code after every file write</div>
+                </div>
+            </div>
+
+            <!-- Response Events -->
+            <div class="hook-card response">
+                <div class="hook-header">
+                    <div class="hook-icon">🏁</div>
+                    <div>
+                        <div class="hook-name">Stop</div>
+                        <div class="hook-timing">Fires when Claude finishes responding</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs when the main Claude Code agent finishes responding. Does NOT run on user interrupts. Ideal for end-of-turn validation like linting, tests, or notifications.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Desktop notification when long task completes</div>
+                </div>
+            </div>
+
+            <div class="hook-card response">
+                <div class="hook-header">
+                    <div class="hook-icon">🤖</div>
+                    <div>
+                        <div class="hook-name">SubagentStop</div>
+                        <div class="hook-timing">Fires when subagent finishes</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs when a Claude Code subagent (Task tool call) has finished responding. Useful for monitoring parallel agent work.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Log when background research agents complete</div>
+                </div>
+            </div>
+
+            <div class="hook-card response">
+                <div class="hook-header">
+                    <div class="hook-icon">🔔</div>
+                    <div>
+                        <div class="hook-name">Notification</div>
+                        <div class="hook-timing">Fires when Claude needs attention</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs when Claude sends notifications — permission requests, idle prompts (60+ seconds), auth dialogs. Filter with matchers like "permission_prompt" or "idle_prompt".</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Play sound when Claude needs your input</div>
+                </div>
+            </div>
+
+            <!-- Context Management -->
+            <div class="hook-card context">
+                <div class="hook-header">
+                    <div class="hook-icon">📦</div>
+                    <div>
+                        <div class="hook-name">PreCompact</div>
+                        <div class="hook-timing">Fires before context compression</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs before Claude compacts conversation context to free space. Compaction summarizes older parts, losing some details. Use to preserve important information.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Archive full transcript before compression</div>
+                </div>
+            </div>
+
+            <!-- User Input -->
+            <div class="hook-card input">
+                <div class="hook-header">
+                    <div class="hook-icon">💬</div>
+                    <div>
+                        <div class="hook-name">UserPromptSubmit</div>
+                        <div class="hook-timing">Fires when user sends prompt</div>
+                    </div>
+                </div>
+                <p class="hook-description">Runs when user submits a prompt, before Claude processes it. Add context, validate prompts, or block certain request types.</p>
+                <div class="hook-example">
+                    <div class="hook-example-label">PM Use Case</div>
+                    <div class="hook-example-text">Auto-attach relevant project context to every prompt</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

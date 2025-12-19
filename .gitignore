@@ -1,0 +1,17 @@
+# Environment variables (contains API keys)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Generated outputs
+outputs/*.png
+outputs/*.jpg
+
+# Session files
+.image_session.json
+
+# OS files
+.DS_Store

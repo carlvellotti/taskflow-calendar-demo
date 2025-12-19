@@ -1,0 +1,6 @@
+# Episode Demo Dependencies
+
+# Image generation (Gemini API)
+google-genai
+pillow
+python-dotenv
