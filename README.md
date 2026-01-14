@@ -1,11 +1,47 @@
-# Episode Demo Files
+# Advanced Claude Code for PMs - Demo Files
 
-Demo files for the "Advanced Claude Code for PMs" video episode.
+Demo files for the ["Advanced Claude Code for PMs" video episode](https://www.youtube.com/watch?v=59gy_24KIVE) with Aakash Gupta.
+
+## Folder Structure
+
+```
+├── start/          ← START HERE to follow along with the video
+├── reference/      ← Finished outputs from the demo (for reference)
+└── (root files)    ← Config & setup files
+```
+
+### `start/` - Beginning of the Lesson
+Copy these files to follow along with the video from the beginning. Contains:
+- Survey data (CSV/JSON)
+- Stakeholder meeting notes
+- Feature context document
+- Survey template
+- Research Synthesis skill
+- Python scripts for image generation & Linear sync
+
+### `reference/` - Finished Outputs
+The completed artifacts I created during the demo:
+- Final PRD (`calendar-integration-prd.md`)
+- Survey synthesis document
+- Journey map image
+- Full slide deck (HTML + PowerPoint)
+- CLAUDE.md with project context
+
+Use these to compare your work or see what the end result should look like.
+
+---
 
 ## Setup Instructions
 
-### 1. Local Files
-All local files are ready to use. Copy this folder to your demo location.
+### 1. Copy Start Files
+```bash
+# Clone this repo
+git clone https://github.com/carlvellotti/taskflow-calendar-demo.git
+cd taskflow-calendar-demo
+
+# Copy start files to your working directory
+cp -r start/* .
+```
 
 ### 2. Environment Variables
 ```bash
@@ -24,54 +60,41 @@ pip install google-genai pillow python-dotenv
 Create these assets in Google Drive:
 
 **Google Sheet: "Calendar Integration Survey Responses"**
-- Import from `data/survey-responses.csv`
-- Or copy the data manually from `data/survey-responses.json`
+- Import from `start/data/survey-responses.csv`
 
 **Google Doc: "Stakeholder Meeting Notes"**
-- Copy content from `data/stakeholder-meeting-notes-content.md`
+- Copy content from `start/data/stakeholder-meeting-notes-content.md`
 
 ### 5. Linear Setup
 - Create project: "TaskFlow Calendar Integration"
-- Ensure your Linear MCP is connected: `npx -y mcp-remote https://mcp.linear.app/mcp`
+- Connect Linear MCP: `npx -y mcp-remote https://mcp.linear.app/mcp`
 
-### 6. Skills
-The Research Synthesis skill is pre-installed at `.claude/skills/research-synthesis/`
-
-### 7. GitHub Setup (for Sections 11-12)
+### 6. GitHub Setup (for Sections 11-12)
 - Create a repo for the demo
 - Install Claude GitHub Action
-- Copy `docs/prd.md` to the repo
+- Copy `start/docs/prd.md` to the repo
 
-## File Structure
+---
 
-```
-episode-demo/
-├── README.md                 # This file
-├── feature-context.md        # Feature 1-pager (Section 3)
-├── survey-template.md        # Survey template (Section 3)
-├── image_gen.py              # Gemini image generation (Section 5)
-├── linear-status-sync.py     # Linear API script (Section 12)
-├── hooks-diagram.html        # Visual hooks reference (Section 6)
-├── .env.example              # Environment template
-├── data/
-│   ├── survey-responses.csv          # Survey data for Google Sheets import
-│   ├── survey-responses.json         # Survey data (JSON reference)
-│   └── stakeholder-meeting-notes-content.md  # Content for Google Doc
-├── docs/
-│   └── prd.md                # PRD template for GitHub repo
-├── outputs/                  # Generated images go here
-└── .claude/
-    └── skills/
-        └── research-synthesis/
-            └── SKILL.md      # Research synthesis skill
-```
+## Video Timestamps
 
-## Demo Flow Reference
+| Time | Section | Files Used |
+|------|---------|------------|
+| 11:04 | Setting Up Linear MCP | - |
+| 14:07 | Essential MCP Stack | - |
+| 21:25 | End-to-End PM Workflow | feature-context.md, survey-template.md |
+| 28:00 | Skills Introduction | .claude/skills/ |
+| 38:00 | Image Generation | image_gen.py |
+| 44:12 | Creating PRD from Survey | Google Sheet, Research Synthesis skill |
+| 51:00 | Hooks Feature | hooks-diagram.html |
+| 55:30 | Creating Presentation | workspace/slides/ |
+| 1:01:49 | Creating Linear Tickets | Linear MCP |
+| 1:08:08 | GitHub Integration | docs/prd.md, linear-status-sync.py |
 
-| Section | Files Used |
-|---------|------------|
-| 3. Draft Survey | feature-context.md, survey-template.md |
-| 4. Synthesize Research | Google Sheet (survey responses), Research Synthesis skill |
-| 5. Draft PRD | image_gen.py, outputs/ |
-| 7-8. Stakeholder Feedback | Google Doc (meeting notes) |
-| 11-12. GitHub Actions | docs/prd.md, linear-status-sync.py |
+---
+
+## Questions?
+
+- Video: https://www.youtube.com/watch?v=59gy_24KIVE
+- Carl on LinkedIn: https://linkedin.com/in/carlvellotti
+- Carl on Twitter/X: https://x.com/carlvellotti
